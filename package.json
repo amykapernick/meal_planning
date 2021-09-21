@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site",
+    "debug": "DEBUG=Eleventy* npm run start"
   },
   "repository": {
     "type": "git",
@@ -13,10 +16,6 @@
   "keywords": [],
   "author": "Amy Kapernick <amy@kapers.dev> (https://amyskapers.dev)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/amykapernick/meal_planning/issues"
-  },
-  "homepage": "https://github.com/amykapernick/meal_planning#readme",
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
     "dotenv": "^10.0.0",
