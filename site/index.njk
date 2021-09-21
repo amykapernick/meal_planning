@@ -1,0 +1,71 @@
+---
+title: Recipes
+pagination:
+  data: collections.recipes
+  size: 12
+  alias: recipes
+---
+{% set pagetitle = "Recipes" %}
+{% set class = "home" %}
+{% extends 'layouts/main.njk' %}
+
+{% block content %}
+
+<h1 class="sr-only">Recipes</h1>
+
+<ul class="feed">
+	{% for recipe in recipes %}
+		<li>
+			<article class="recipe">
+				<h2>
+					<a href="{{recipe | slug}}">
+						{% if recipe.data.external %}
+							<span class="sr-only">External Link</span>
+							{% svg 'icons/external' %}
+						{% endif %}
+						{{ recipe.data.title }}
+					</a>
+				</h2>
+				{% if recipe.data.categories %}
+					<ul class="tags">
+						{% for tag in recipe.data.categories %}
+							<li>
+								<a>#{{tag}}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</article>
+		</li>
+	{% endfor %}
+</ul>
+
+<ul class="pagination">
+	<li>
+		{% if pagination.href.previous %}
+			<a href="{{ pagination.href.previous }}">Previous</a>
+		{% else %}
+			Previous
+		{% endif %}
+	</li>
+	{%- for pageEntry in pagination.pages %}
+		<li
+			{% if page.url == pagination.hrefs[ loop.index0 ] %} 
+				aria-current="page"
+			{% endif %}
+		>
+			<a href="{{ pagination.hrefs[ loop.index0 ] }}">
+				{{ loop.index }}
+			</a>
+		</li>
+	{%- endfor %}
+    <li>
+		{% if pagination.href.next %}
+			<a href="{{ pagination.href.next }}">Next</a>
+		{% else %}
+			Next
+		{% endif %}
+	</li>
+</ul>
+
+{% endblock %}
