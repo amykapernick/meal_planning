@@ -7,7 +7,6 @@ const hint = require('remark-hint')
 const oembed = require('remark-oembed')
 const squeeze = require('remark-squeeze-paragraphs')
 const external = require('remark-external-links')
-const a11yEmoji = require('@fec/remark-a11y-emoji')
 const attr = require('remark-attr')
 const rehype = require('remark-rehype')
 const rehypeRaw = require('rehype-raw');
@@ -32,16 +31,7 @@ const processCaption = (markdown) => {
 const options = {
 	enableRehype: false,
 	plugins: [
-		// gfm,
-		// github,
 		hint,
-		// {
-		// 	plugin: oembed,
-		// 	options: {
-		// 		syncWidget: true,
-		// 		asyncImg: true,
-		// 	}
-		// },
 		section,
 		{
 			plugin: highlight,
@@ -57,7 +47,6 @@ const options = {
 				protocols: ['http', 'https'],
 			}
 		},
-		a11yEmoji,
 		slug,
 		{
 			plugin: autoLink,
