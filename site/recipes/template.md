@@ -1,5 +1,10 @@
 ---
 title: Template
+time: 30min
+difficulty: Easy
+categories:
+  - Beef
+ingredients: []
 ---
 
 1. Lightly toast the peanuts in a dry frying pan, then crush in a pestle and mortar and put aside. Peel and finely chop the garlic and ginger.

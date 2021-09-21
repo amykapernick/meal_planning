@@ -40,10 +40,10 @@ collections:
         widget: string
       - label: Hours Required
         name: time
-        widget: number
+        widget: string
       - label: Difficulty
         name: difficulty
-        widget: list
+        widget: select
         multiple: false
         options: ["Easy", "Medium", "Hard", "Masterchef"]
       - label: Categories
@@ -52,20 +52,18 @@ collections:
         multiple: true
         options:
           ["Beef", "Chicken", "Pork", "Vegetarian", "Main", "Desset", "Snack"]
-      - label: Method
-        name: body
-        widget: markdown
       - label: Ingredients
         name: ingredients
         widget: list
+        required: false
         fields:
           - label: Ingredients
             name: ingredients
             widget: relation
             collection: ingredients
             value_field: name
-            search_fields: name
-            display_fields: name
+            search_fields: [name]
+            display_fields: [name]
           - label: Quantity
             name: quantity
             widget: number
@@ -74,3 +72,6 @@ collections:
             widget: select
             multiple: false
             options: ["Cup", "Kilograms", "Ounces", "Litres"]
+      - label: Method
+        name: body
+        widget: markdown
