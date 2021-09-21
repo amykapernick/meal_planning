@@ -12,18 +12,6 @@ public_folder: "/img/cms/"
 site_url: https://mealplanning-kapers.netlify.app
 
 collections:
-  - name: ingredient
-    label: Ingredients
-    label_singular: Ingredient
-    folder: site/ingredients
-    extension: md
-    create: true
-    editor:
-      preview: false
-    fields:
-      - label: Name
-        name: name
-        widget: string
   - name: recipe
     label: Recipes
     label_singular: Recipe
@@ -71,7 +59,41 @@ collections:
             name: measurement
             widget: select
             multiple: false
-            options: ["Cup", "Kilograms", "Ounces", "Litres"]
+            options:
+              [
+                "Cup",
+                "Kilograms",
+                "Ounces",
+                "Litres",
+                "Grams",
+                "Millilitres",
+                "Teaspoon",
+                "Tablespoon",
+              ]
       - label: Method
         name: body
         widget: markdown
+  - name: ingredient
+    label: Ingredients
+    label_singular: Ingredient
+    folder: site/ingredients
+    extension: md
+    create: true
+    editor:
+      preview: false
+    fields:
+      - label: Name
+        name: name
+        widget: string
+      - label: Cup
+        name: cup
+        widget: string
+      - label: Kilograms
+        name: kg
+        widget: string
+      - label: Ounces
+        name: oz
+        widget: string
+      - label: Litres
+        name: litre
+        widget: string
