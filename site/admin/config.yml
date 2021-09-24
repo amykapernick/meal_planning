@@ -54,7 +54,7 @@ collections:
             display_fields: [name]
           - label: Quantity
             name: quantity
-            widget: number
+            widget: string
           - label: Measurement
             name: measurement
             widget: select
@@ -69,11 +69,12 @@ collections:
                 "Millilitres",
                 "Teaspoon",
                 "Tablespoon",
+                "Each",
               ]
       - label: Method
         name: body
         widget: markdown
-  - name: ingredient
+  - name: ingredients
     label: Ingredients
     label_singular: Ingredient
     folder: site/ingredients
@@ -87,13 +88,17 @@ collections:
         widget: string
       - label: Cup
         name: cup
+        required: false
         widget: string
       - label: Kilograms
         name: kg
+        required: false
         widget: string
       - label: Ounces
         name: oz
+        required: false
         widget: string
       - label: Litres
         name: litre
+        required: false
         widget: string
