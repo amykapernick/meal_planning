@@ -10,6 +10,7 @@ media_folder: site/img
 public_folder: /img/cms
 
 site_url: https://mealplanning-kapers.netlify.app
+logo_url: https://amyskapers.dev/img/aimhigher.png
 
 i18n:
   structure: multiple_folders
