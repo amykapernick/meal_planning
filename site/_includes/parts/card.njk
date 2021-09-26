@@ -1,0 +1,22 @@
+<article class="recipe_card">
+	<h2>
+		<a href="{{recipe | slug}}">
+			{{ recipe.data.title }}
+		</a>
+	</h2>
+	{% if recipe.data.image %}
+		<img src="/img/cms/{{recipe.data.image}}" />
+	{% else %}
+		<img src="/img/placeholder.png" />
+	{% endif %}
+	{% if recipe.data.categories %}
+		{% set tags = recipe.data.categories %}
+		{% include 'parts/tags.njk' %}
+	{% endif %}
+	<dl>
+		<dt>Difficulty</dt>
+		<dd>{{ recipe.data.difficulty }}</dd>
+		<dt>Time</dt>
+		<dd>{{ recipe.data.time | time }}</dd>
+	</dl>
+</article>

@@ -7,7 +7,6 @@ backend:
 local_backend: true
 
 media_folder: site/img
-public_folder: "/img/cms/"
 
 site_url: https://mealplanning-kapers.netlify.app
 

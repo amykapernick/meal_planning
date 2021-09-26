@@ -4,23 +4,25 @@
 
 
 {% block content %}
-<article class="content">
-	<header>
-		<h1>{{title}}</h1>
-		{% if categories %}
-			<ul class="tags">
-				{% for tag in categories %}
-				<li>
-					<a>#{{tag}}</a>
-				</li>
-				{% endfor %}
-			</ul>
-		{% endif %}
-		<img src="/img/cms/{{image}}" />
-		{% for i in ingredients | ingredients %}
-			<li>{{i.quantity}} {{i.unit}} {{i.ingredient}}</li>
-		{% endfor %}
-	</header>
-	{{content | safe}}
-</article>
+	<article class="content">
+		<header>
+			<h1>{{title}}</h1>
+			{% if categories %}
+				<ul class="tags">
+					{% for tag in categories %}
+					<li>
+						<a>#{{tag}}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+			{% if image %}
+				<img src="/img/cms/{{image}}" />
+			{% endif %}
+			{% for i in ingredients | ingredients %}
+				<li>{{i.quantity}} {{i.unit}} {{i.ingredient}}</li>
+			{% endfor %}
+		</header>
+		{{content | safe}}
+	</article>
 {% endblock %}

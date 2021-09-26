@@ -9,6 +9,7 @@ const {
 const eleventyRemark = require('./site/utils/markdown/index.js')
 const slug = require('./site/utils/filters/slug')
 const ingredients = require('./site/utils/filters/ingredients')
+const time = require('./site/utils/filters/time')
 const image = require('./site/utils/shortcodes/image')
 const svg = require('./site/utils/plugins/svg')
 
@@ -31,6 +32,7 @@ module.exports = (eleventyConfig) => {
 	// Filters
 	eleventyConfig.addFilter('slug', slug)
 	eleventyConfig.addFilter('ingredients', ingredients)
+	eleventyConfig.addFilter('time', time)
 	eleventyConfig.addFilter("debug", (data) => {
 		console.log(data)
 		return `<script>console.log(${data})</script>`

@@ -11,34 +11,15 @@ pagination:
 {% extends 'layouts/main.njk' %}
 
 {% block content %}
+	<h1>Recipes</h1>
 
-<h1>Recipes</h1>
+	<ul class="recipes">
+		{% for recipe in recipes %}
+			<li>
+				{% include 'parts/card.njk' %}
+			</li>
+		{% endfor %}
+	</ul>
 
-<ul class="feed">
-	{% for recipe in recipes %}
-		<li>
-			<article class="recipe">
-				<h2>
-					<a href="{{recipe | slug}}">
-						{{ recipe.data.title }}
-					</a>
-				</h2>
-				{% if recipe.data.image %}
-					<img src="/img/cms/{{recipe.data.image}}" />
-				{% else %}
-					<img src="/img/plceholder.png" />
-				{% endif %}
-				{% if recipe.data.categories %}
-					<ul class="tags">
-						{% for tag in recipe.data.categories %}
-							<li>
-								<a>#{{tag}}</a>
-							</li>
-						{% endfor %}
-					</ul>
-				{% endif %}
-			</article>
-		</li>
-	{% endfor %}
-</ul>
+	{% include 'parts/pagination.njk' %}
 {% endblock %}
