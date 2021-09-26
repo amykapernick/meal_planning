@@ -22,9 +22,13 @@
 			<ul class="ingredients">
 				{% for i in ingredients | ingredients %}
 					<li>
-						<span class="quantity">{{i.quantity}}</span> 
-						<span class="unit">{{i.unit}}</span> 
-						<span class="ingredient">{{i.ingredient}}</span>
+						{% if i.ingredient %}
+							<span class="quantity">{{i.quantity}}</span> 
+							<span class="unit">{{i.unit}}</span> 
+							<span class="ingredient">{{i.ingredient}}</span>
+						{% else %}
+							<strong>{{i.category}}</strong>
+						{% endif %}
 					</li>
 				{% endfor %}
 			</ul>

@@ -21,6 +21,11 @@ const matchIngredient = '(?<ingredient>.+?)'
 const formatIngredients = (ingredients) => {
 	const match = `^${matchQuantity} *${matchUnit}*(?:of )*${matchIngredient}$`
 	const ingredientList = ingredients.map(i => {
+
+		if(i.match(RegExp(/^#/, 'i'))) {
+			return ({category: i.replace(RegExp(/^#/), '')})
+		}
+
 		const matches = i.match(RegExp(match, 'i'))
 
 		return matches?.groups ? {...matches.groups, full: i} : {full: i}
