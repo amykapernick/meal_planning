@@ -8,15 +8,19 @@
 	<header>
 		<h1>{{title}}</h1>
 		{% if categories %}
-		<ul class="tags">
-			{% for tag in categories %}
-			<li>
-				<a>#{{tag}}</a>
-			</li>
-			{% endfor %}
-		</ul>
+			<ul class="tags">
+				{% for tag in categories %}
+				<li>
+					<a>#{{tag}}</a>
+				</li>
+				{% endfor %}
+			</ul>
 		{% endif %}
+		<img src="/img/cms/{{image}}" />
+		{% for i in ingredients | ingredients %}
+			<li>{{i.quantity}} {{i.unit}} {{i.ingredient}}</li>
+		{% endfor %}
 	</header>
-	{{contentsafe}}
+	{{content | safe}}
 </article>
 {% endblock %}

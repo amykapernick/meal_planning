@@ -6,7 +6,7 @@ backend:
 
 local_backend: true
 
-media_folder: site/src/img/cms
+media_folder: site/img
 public_folder: "/img/cms/"
 
 site_url: https://mealplanning-kapers.netlify.app
@@ -59,6 +59,9 @@ collections:
             "Fish",
             "Gluten Free",
             "Vegan",
+            "Lamb",
+            "Cupcakes",
+            "Christmas",
             "Vegetarian",
             "Main",
             "Desset",
@@ -69,6 +72,7 @@ collections:
         widget: image
         choose_url: true
         i18n: duplicate
+        required: false
       - label: Ingredients
         name: ingredients
         widget: ingredients
@@ -82,3 +86,4 @@ collections:
         minimal: true
         buttons: ["numbered-list"]
         editor_components: []
+        default: "1. "

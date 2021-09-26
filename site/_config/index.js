@@ -4,7 +4,7 @@ const browserSyncConfig = {
 	logFileChanges: true,
 }
 
-const templateFormats = ['html', 'md', 'njk', 'png', 'jpg', 'css']
+const templateFormats = ['html', 'md', 'njk', 'css']
 
 const config = {
 	dir: {

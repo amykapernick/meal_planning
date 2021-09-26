@@ -23,8 +23,11 @@ pagination:
 						{{ recipe.data.title }}
 					</a>
 				</h2>
-				{{recipe.data.image}}
-				<img src="" />
+				{% if recipe.data.image %}
+					<img src="/img/cms/{{recipe.data.image}}" />
+				{% else %}
+					<img src="/img/plceholder.png" />
+				{% endif %}
 				{% if recipe.data.categories %}
 					<ul class="tags">
 						{% for tag in recipe.data.categories %}

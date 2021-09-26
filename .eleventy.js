@@ -8,6 +8,7 @@ const {
 
 const eleventyRemark = require('./site/utils/markdown/index.js')
 const slug = require('./site/utils/filters/slug')
+const ingredients = require('./site/utils/filters/ingredients')
 const image = require('./site/utils/shortcodes/image')
 const svg = require('./site/utils/plugins/svg')
 
@@ -19,9 +20,9 @@ module.exports = (eleventyConfig) => {
 
 	// Passthrough Copy
 	eleventyConfig.addPassthroughCopy('site/admin')
-	eleventyConfig.addPassthroughCopy('site/img/**/*.{gif,mp4}')
 	eleventyConfig.addPassthroughCopy({'site/src/fonts': 'fonts'})
 	eleventyConfig.addPassthroughCopy({'site/src/img': 'img'})
+	eleventyConfig.addPassthroughCopy({'site/img': 'img/cms'})
 
 	// Plugins
 	eleventyConfig.addPlugin(...eleventyRemark);
@@ -29,17 +30,9 @@ module.exports = (eleventyConfig) => {
 
 	// Filters
 	eleventyConfig.addFilter('slug', slug)
+	eleventyConfig.addFilter('ingredients', ingredients)
 	eleventyConfig.addFilter("debug", (data) => {
-		// console.log(data)
-
-		Object.keys(data).forEach(collection => {
-			data[collection].forEach(item => {
-				if(item.data.tags) {
-					console.log(item.data.tags)
-				}
-			})
-		})
-
+		console.log(data)
 		return `<script>console.log(${data})</script>`
 	});
 
