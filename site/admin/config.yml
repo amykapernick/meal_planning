@@ -4,7 +4,7 @@ backend:
   repo: amykapernick/meal_planning
   branch: dev
 
-local_backend: true
+# local_backend: true
 
 media_folder: site/img
 public_folder: /img/cms
