@@ -2,14 +2,14 @@
 backend:
   name: git-gateway
   repo: amykapernick/meal_planning
-  branch: dev
+  branch: prod
 
 # local_backend: true
 
 media_folder: site/img
 public_folder: /img/cms
 
-site_url: https://mealplanning-kapers.netlify.app
+site_url: https://meals.kapers.dev
 logo_url: https://amyskapers.dev/img/aimhigher.png
 
 i18n:
