@@ -7,9 +7,14 @@ const units = [
 	'teaspoon',
 	'sprig',
 	'handful',
-	'bulb'
+	'bulb',
+	'tsp',
+	'tbsp',
+	'cup',
+	'tin',
+	'bunch'
 ]
-const matchQuantity = '(?<quantity>\\d+(?:cm)*)*'
+const matchQuantity = '(?<quantity>(\\d|\\/|\\.|-)+(?:cm)*)*'
 const matchUnit = `(?:(?<unit>${units.join('|')})s* )`
 const matchIngredient = '(?<ingredient>.+?)'
 

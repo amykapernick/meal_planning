@@ -1,0 +1,48 @@
+.recipe {
+	h1 {
+		margin: 0;
+	}
+
+	img {
+		width: 100%;
+		max-width: 300px;
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	ol {
+		li {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.ingredients {
+	.quantity {
+		border-bottom: 1px solid var.$orange;
+	}
+
+	.unit {
+		border-bottom: 1px solid var.$red;
+	}
+
+	.ingredient {
+		border-bottom: 1px solid var.$green;
+	}
+}
+
+@media(min-width: 40em) {
+	.recipe {
+		max-width: 800px;
+
+		section {
+			display: flex;
+		}
+
+		img {
+			order: 2;
+			margin-left: 20px;
+		}
+	}
+}

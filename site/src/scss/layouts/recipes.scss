@@ -18,6 +18,8 @@
 
 @media(min-width: 50em) {
 	.recipes {
+		justify-content: flex-start;
+
 		> li {
 			flex-basis: 300px;
 		}
