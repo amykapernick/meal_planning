@@ -1,5 +1,9 @@
 ---
 title: Recipes
+pagination:
+  data: collections.recipes
+  size: 15
+  alias: recipes
 ---
 
 {% set pagetitle = "Recipes" %}
@@ -11,18 +15,16 @@ title: Recipes
 <h1>Recipes</h1>
 
 <ul class="feed">
-	{% for recipe in collection.recipes %}
+	{% for recipe in recipes %}
 		<li>
 			<article class="recipe">
 				<h2>
 					<a href="{{recipe | slug}}">
-						{% if recipe.data.external %}
-							<span class="sr-only">External Link</span>
-							{% svg 'icons/external' %}
-						{% endif %}
 						{{ recipe.data.title }}
 					</a>
 				</h2>
+				{{recipe.data.image}}
+				<img src="" />
 				{% if recipe.data.categories %}
 					<ul class="tags">
 						{% for tag in recipe.data.categories %}

@@ -1,5 +1,5 @@
 const browserSyncConfig = {
-	notify: false,
+	notify: true,
 	watch: true,
 	logFileChanges: true,
 }

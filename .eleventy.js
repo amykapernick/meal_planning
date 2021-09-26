@@ -29,9 +29,24 @@ module.exports = (eleventyConfig) => {
 
 	// Filters
 	eleventyConfig.addFilter('slug', slug)
+	eleventyConfig.addFilter("debug", (data) => {
+		// console.log(data)
+
+		Object.keys(data).forEach(collection => {
+			data[collection].forEach(item => {
+				if(item.data.tags) {
+					console.log(item.data.tags)
+				}
+			})
+		})
+
+		return `<script>console.log(${data})</script>`
+	});
 
 	// Shortcodes
 	eleventyConfig.addNunjucksAsyncShortcode('image', image)
+
+	
 
 	
 	return {

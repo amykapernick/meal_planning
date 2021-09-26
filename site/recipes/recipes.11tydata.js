@@ -1,7 +1,12 @@
 module.exports = {
 	eleventyComputed: {
-		permalink: (data) => `recipes/${data.page.fileSlug}/index.html`,
-		tags: 'recipes'
+		permalink: (data) => {
+			const slug = data.page.fileSlug
+			const locale = data.page.filePathStem.match(/\/recipes\/(\w+)\/(.)+/)[1]
+
+			return `recipes/${locale}/${slug}/index.html`
+		},
 	},
+	tags: 'recipes',
 	layout: `templates/recipe.njk`
 }

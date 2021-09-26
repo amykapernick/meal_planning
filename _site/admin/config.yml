@@ -11,6 +11,11 @@ public_folder: "/img/cms/"
 
 site_url: https://mealplanning-kapers.netlify.app
 
+i18n:
+  structure: multiple_folders
+  locales: [en, de, fr]
+  default_locale: en
+
 collections:
   - name: recipe
     label: Recipes
@@ -19,6 +24,7 @@ collections:
     media_folder: ""
     public_folder: ""
     extension: md
+    i18n: true
     create: true
     editor:
       preview: false
@@ -26,79 +32,53 @@ collections:
       - label: Title
         name: title
         widget: string
+        i18n: true
       - label: Hours Required
         name: time
         widget: string
+        i18n: duplicate
+        required: false
       - label: Difficulty
         name: difficulty
         widget: select
         multiple: false
+        required: false
+        i18n: duplicate
         options: ["Easy", "Medium", "Hard", "Masterchef"]
       - label: Categories
         name: categories
         widget: select
         multiple: true
+        required: false
+        i18n: duplicate
         options:
-          ["Beef", "Chicken", "Pork", "Vegetarian", "Main", "Desset", "Snack"]
+          [
+            "Beef",
+            "Chicken",
+            "Pork",
+            "Fish",
+            "Gluten Free",
+            "Vegan",
+            "Vegetarian",
+            "Main",
+            "Desset",
+            "Snack",
+          ]
+      - label: Image
+        name: image
+        widget: image
+        choose_url: true
+        i18n: duplicate
       - label: Ingredients
         name: ingredients
-        widget: list
+        widget: ingredients
         required: false
-        fields:
-          - label: Ingredients
-            name: ingredients
-            widget: relation
-            collection: ingredients
-            value_field: name
-            search_fields: [name]
-            display_fields: [name]
-          - label: Quantity
-            name: quantity
-            widget: string
-          - label: Measurement
-            name: measurement
-            widget: select
-            multiple: false
-            options:
-              [
-                "Cup",
-                "Kilograms",
-                "Ounces",
-                "Litres",
-                "Grams",
-                "Millilitres",
-                "Teaspoon",
-                "Tablespoon",
-                "Each",
-              ]
+        i18n: duplicate
       - label: Method
         name: body
         widget: markdown
-  - name: ingredients
-    label: Ingredients
-    label_singular: Ingredient
-    folder: site/ingredients
-    extension: md
-    create: true
-    editor:
-      preview: false
-    fields:
-      - label: Name
-        name: name
-        widget: string
-      - label: Cup
-        name: cup
+        i18n: true
         required: false
-        widget: string
-      - label: Kilograms
-        name: kg
-        required: false
-        widget: string
-      - label: Ounces
-        name: oz
-        required: false
-        widget: string
-      - label: Litres
-        name: litre
-        required: false
-        widget: string
+        minimal: true
+        buttons: ["numbered-list"]
+        editor_components: []

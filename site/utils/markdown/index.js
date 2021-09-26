@@ -1,13 +1,7 @@
 const path = require('path');
-
 const eleventyRemark = require('@fec/eleventy-plugin-remark')
-const gfm = require('remark-gfm')
-const github = require('remark-github')
 const hint = require('remark-hint')
-const oembed = require('remark-oembed')
-const squeeze = require('remark-squeeze-paragraphs')
 const external = require('remark-external-links')
-const attr = require('remark-attr')
 const rehype = require('remark-rehype')
 const rehypeRaw = require('rehype-raw');
 const slug = require('remark-slug')
@@ -16,8 +10,6 @@ const autoLink = require('remark-autolink-headings')
 const remark = require('remark')
 const html = require('remark-html')
 const images = require('@fec/remark-images')
-const section = require('remark-sectionize')
-const highlight = require('remark-highlight.js')
 
 const processCaption = (markdown) => {
 	const caption = remark()
@@ -32,13 +24,6 @@ const options = {
 	enableRehype: false,
 	plugins: [
 		hint,
-		section,
-		{
-			plugin: highlight,
-			options: {
-
-			}
-		},
 		{
 			plugin: external,
 			options: {
@@ -83,7 +68,6 @@ const options = {
 		  
 		  rehypeRaw,
 		  stringify,	
-		  squeeze,
 	]
 }
 

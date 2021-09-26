@@ -1,3 +1,3 @@
 module.exports = (recipe) => {
-	return `/${recipe.fileSlug}`
+	return recipe.url
 }
