@@ -5,7 +5,7 @@ difficulty: Easy
 categories:
   - Lamb
   - Main
-image: 193164098_798175700886175_8829910614933098792_n.jpg
+image: /img/cms/193164098_798175700886175_8829910614933098792_n.jpg
 ingredients:
   - 1/4 cup mayo
   - 1 Lime

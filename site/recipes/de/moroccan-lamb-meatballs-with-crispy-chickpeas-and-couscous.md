@@ -5,7 +5,7 @@ difficulty: Easy
 categories:
   - Lamb
   - Main
-image: /site/img/IMG_20210918_211334_387.jpg
+image: /img/cms/IMG_20210918_211334_387.jpg
 ingredients:
   - 2 cups baby spinach
   - 250g lamb mince

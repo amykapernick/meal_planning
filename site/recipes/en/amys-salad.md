@@ -4,7 +4,7 @@ time: "0.5"
 difficulty: Easy
 categories:
   - Vegetarian
-image: /site/img/img_20191026_183942_971.jpg
+image: /img/cms/img_20191026_183942_971.jpg
 ingredients:
   - Lebanese cucumber
   - Cherry tomatoes

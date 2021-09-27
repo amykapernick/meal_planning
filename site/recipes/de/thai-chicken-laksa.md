@@ -4,10 +4,10 @@ difficulty: Easy
 categories:
   - Chicken
   - Main
-image: pxl_20210925_121405501.mp.jpg
+image: /img/cms/pxl_20210925_121405501.mp.jpg
 ingredients:
   - "# Chicken"
-  - 4 skinless, boneless chicken thights
+  - 4 skinless, boneless chicken thighs
   - 1 heaped tsp Chinese five-spice
   - 1 Tbsp runny honey
   - 1 tbsp sesame seeds

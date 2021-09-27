@@ -5,7 +5,7 @@ categories:
   - Vegetarian
   - Pork
   - Main
-image: /site/img/img_20200629_215756_033.jpg
+image: /img/cms/img_20200629_215756_033.jpg
 ingredients:
   - Sweet potato
   - 1/2 pack halloumi

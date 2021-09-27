@@ -3,7 +3,7 @@ title: Happy Hummus Bowl
 categories:
   - Main
   - Vegan
-image: /site/img/img_20170917_195401_911.jpg
+image: /img/cms/img_20170917_195401_911.jpg
 ingredients:
   - 100g tinned chickpeas
   - Garlic

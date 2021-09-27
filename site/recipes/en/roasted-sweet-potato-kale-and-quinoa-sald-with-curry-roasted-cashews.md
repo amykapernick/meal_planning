@@ -1,5 +1,5 @@
 ---
-title: Roasted sweet potato, kale and quinoa sald with curry roasted cashews
+title: Roasted sweet potato, kale and quinoa salad with curry roasted cashews
 time: "0.75"
 difficulty: Easy
 categories:

@@ -2,7 +2,7 @@
 title: Lady Flo's Pumpkin Scones
 categories:
   - Dessert
-image: img_20200814_130631_787.jpg
+image: /img/cms/img_20200814_130631_787.jpg
 ingredients:
   - 1 tbsp butter
   - 1/2 cup sugar

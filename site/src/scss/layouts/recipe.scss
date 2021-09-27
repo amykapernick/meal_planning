@@ -46,9 +46,16 @@
 			display: flex;
 		}
 
+		.ingredients {
+			margin-right: 20px;
+		}
+
 		img {
+			display: block;
+			flex: 1 1 300px;
 			order: 2;
-			margin-left: 20px;
+			max-width: 50%;
+			object-fit: contain;
 		}
 	}
 }
@@ -56,5 +63,10 @@
 @media(min-width: 60em) {
 	.recipe {
 		padding: 50px;
+
+		img {
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
 	}
 }
