@@ -1,19 +1,19 @@
 ---
-title: Recipes
-permalink: "{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}"
+title: Recettes
+permalink: "fr/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}"
 pagination:
-  data: collections.recipes_en
+  data: collections.recipes_fr
   size: 15
   alias: recipes
 ---
 
-{% set pagetitle = "Recipes" %}
+{% set pagetitle = "Recettes" %}
 {% set class = "home" %}
-{% set language = "en-AU" %}
+{% set language = "fr" %}
 {% extends 'layouts/main.njk' %}
 
 {% block content %}
-	<h1>Recipes</h1>
+	<h1>Recettes</h1>
 
 	<ul class="recipes">
 		{% for recipe in recipes %}
