@@ -46,26 +46,13 @@ collections:
         options: ["Easy", "Medium", "Hard", "Masterchef"]
       - label: Categories
         name: categories
-        widget: select
+        widget: relation
         multiple: true
         required: false
         i18n: duplicate
-        options:
-          [
-            "Beef",
-            "Chicken",
-            "Pork",
-            "Fish",
-            "Gluten Free",
-            "Vegan",
-            "Lamb",
-            "Cupcakes",
-            "Christmas",
-            "Vegetarian",
-            "Main",
-            "Dessert",
-            "Snack",
-          ]
+        collection: categories
+        value_field: "{{category}}"
+        search_fields: ["category"]
       - label: Image
         name: image
         widget: image
@@ -89,3 +76,15 @@ collections:
         buttons: ["numbered-list"]
         editor_components: []
         default: "1. "
+  - name: categories
+    label: Categories
+    label_singular: Category
+    folder: site/categories
+    extension: json
+    create: true
+    editor:
+      preview: false
+    fields:
+      - label: Category
+        name: category
+        widget: string
