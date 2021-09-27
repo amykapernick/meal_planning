@@ -8,6 +8,20 @@
 		margin: 0;
 	}
 
+	header {
+		margin-bottom: 20px;
+
+		&:after {
+			@include mixins.underline(map.get(var.$colours, 'darkpurple'));
+			content: '';
+			display: block;
+			height: 10px;
+			background-repeat: no-repeat;
+			background-position: left center;
+			background-size: auto 6px;
+		}
+	}
+
 	img {
 		width: 100%;
 		max-width: 300px;
@@ -64,9 +78,23 @@
 	.recipe {
 		padding: 50px;
 
+		.ingredients {
+			flex-grow: 1;
+		}
+
 		img {
 			flex-grow: 1;
 			flex-shrink: 1;
+		}
+	}
+}
+
+@media(min-width: 70em) {
+	.recipe {
+		header {
+			&:before {
+				background-size: auto 7px;
+			}
 		}
 	}
 }

@@ -52,7 +52,7 @@ h2, h3, h4 {
 hr {
 	height: 10px;
 	border: none;
-	background-image: var.$underline_darkpurple;
+	@include mixins.underline(map.get(var.$colours, 'darkpurple'));
 	background-repeat: no-repeat;
 	background-position: left center;
 	background-size: auto 6px;

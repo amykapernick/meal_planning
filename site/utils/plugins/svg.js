@@ -1,7 +1,7 @@
-const plugin = require('@jamshop/eleventy-plugin-svg')
+const plugin = require('eleventy-plugin-svg-contents')
 
 const options = {
 	input: 'site/src/img'
 }
 
-module.exports = [plugin, options]
+module.exports = [plugin]
