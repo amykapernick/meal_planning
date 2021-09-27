@@ -1,6 +1,5 @@
 module.exports = {
-	eleventyComputed: {
-		permalink: false,
-		tags: ['categories']
-	},
+	permalink: false,
+	tags: ['categories'],
+	eleventyExcludeFromCollections: true
 }
