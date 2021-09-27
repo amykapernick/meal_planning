@@ -5,8 +5,9 @@ difficulty: Easy
 categories:
   - Pork
   - Main
+image: /img/cms/dsc_4047.jpg
 ingredients:
-  - 500g chorizon
+  - 500g chorizo
   - 700g potatoes
   - 1 small onion
   - 1 capsicum
