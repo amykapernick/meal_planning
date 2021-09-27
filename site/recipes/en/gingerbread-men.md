@@ -3,6 +3,7 @@ title: Gingerbread Men
 categories:
   - Christmas
   - Dessert
+image: /site/img/pxl_20201217_000705786.mp.jpg
 ingredients:
   - 125g butter
   - 1/2 cup brown sugar
