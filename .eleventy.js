@@ -12,7 +12,6 @@ const ingredients = require('./site/utils/filters/ingredients')
 const time = require('./site/utils/filters/time')
 const image = require('./site/utils/shortcodes/image')
 const svg = require('./site/utils/plugins/svg')
-const categories = require('./site/utils/collections/categories')
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.setBrowserSyncConfig(browserSyncConfig)
@@ -43,7 +42,6 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addNunjucksAsyncShortcode('image', image)
 
 	// Custom Collections
-	eleventyConfig.addCollection("categories", categories);
 	eleventyConfig.addCollection('recipes_en', (collection) => collection.getFilteredByTags('recipes', 'en'))
 	eleventyConfig.addCollection('recipes_de', (collection) => collection.getFilteredByTags('recipes', 'de'))
 	eleventyConfig.addCollection('recipes_fr', (collection) => collection.getFilteredByTags('recipes', 'fr'))
