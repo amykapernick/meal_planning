@@ -24,6 +24,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy({'site/src/fonts': 'fonts'})
 	eleventyConfig.addPassthroughCopy({'site/src/img': 'img'})
 	eleventyConfig.addPassthroughCopy({'site/img': 'img/cms'})
+	eleventyConfig.addPassthroughCopy({'site/src/js/components': 'js/components'})
 
 	// Plugins
 	eleventyConfig.addPlugin(...eleventyRemark);

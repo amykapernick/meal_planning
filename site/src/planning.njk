@@ -1,0 +1,33 @@
+---
+title: Meal Planning
+permalink: /planning/
+---
+
+{% set pagetitle = "Meal Planning" %}
+{% set language = "en-AU" %}
+{% extends 'layouts/main.njk' %}
+
+{% set environment = "production.min" %}
+{% if env.env == "dev" %}
+	{% set environment = "development" %}
+{% endif %}
+
+{% block footer %}
+	<script src="https://unpkg.com/react@17/umd/react.{{environment}}.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@17/umd/react-dom.{{environment}}.js" crossorigin></script>
+	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+	<script 
+		type="text/babel" 
+		src="/js/components/app.js"
+		data-type="module"
+		data-presets="env,react"
+	></script>
+{% endblock %}
+
+{% block content %}
+	<h1>Meal Planning</h1>
+	<div id="app">
+
+	</div>
+{% endblock %}
