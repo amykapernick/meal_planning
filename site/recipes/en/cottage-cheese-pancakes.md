@@ -1,5 +1,10 @@
 ---
 title: Cottage Cheese Pancakes
+categories:
+  - Sweet
+  - Snack
+  - Dessert
+  - Breakfast
 ingredients:
   - 1/2 cup cottage cheese
   - 1/2 cup rolled oats
