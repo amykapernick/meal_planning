@@ -19,11 +19,11 @@ permalink: /planning/
 	<h1>Meal Planning</h1>
 	<ul class="days">
 		{% for day in days %}
-			<li>
+			<li class="day" data-day="{{day | lower}}">
 				<h2>{{day}}</h2>
 				<ul class="sections">
 					{% for section in sections %}
-						<li>
+						<li class="section" data-section="{{section | lower}}">
 							<h3>{{section}}</h3>
 							<div class="picker"></div>
 						</li>
