@@ -1,10 +1,9 @@
-@keyframes steam {
-	0% {
-		stroke-dasharray: 20;
-		stroke-dashoffset: 20;
+@keyframes timer {
+	0%  {
+		transform: rotate(0);
 	}
 
-	100% {
-		stroke-dashoffset: 0;
+	100%  {
+		transform: rotate(360deg);
 	}
 }

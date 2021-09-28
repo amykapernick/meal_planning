@@ -43,8 +43,10 @@
 		height: 100%;
 	}
 
+	@include mixins.draw(20);
+
 	.lines {
-		animation: steam 5s linear infinite;
+		animation: draw_20 5s linear infinite;
 	}
 }
 

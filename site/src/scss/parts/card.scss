@@ -54,6 +54,17 @@
 		svg {
 			width: auto;
 			height: 1.2em;
+
+			@include mixins.draw(100);
+
+			.lines {
+				animation: draw_100 5s linear forwards;
+			}
+
+			.hand {
+				transform-origin: 20.5px 21px;
+				animation: timer 10s linear infinite;
+			}
 		}
 	}
 
