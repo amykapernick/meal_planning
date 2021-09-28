@@ -12,6 +12,31 @@ permalink: /planning/
 	{% set environment = "development" %}
 {% endif %}
 
+{% set days = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'] %}
+{% set sections = ['Breakfast', 'Lunch', 'Dinner', 'Snacks'] %}
+
+{% block content %}
+	<h1>Meal Planning</h1>
+	<ul class="days">
+		{% for day in days %}
+			<li>
+				<h2>{{day}}</h2>
+				<ul class="sections">
+					{% for section in sections %}
+						<li>
+							<h3>{{section}}</h3>
+							<div class="picker"></div>
+						</li>
+					{% endfor %}
+				</ul>
+			</li>
+		{% endfor %}
+	</ul>
+	<script>
+		window.localStorage.setItem('recipes', {{collections.recipes_en | print | dump | safe}});
+	</script>
+{% endblock %}
+
 {% block footer %}
 	<script src="https://unpkg.com/react@17/umd/react.{{environment}}.js" crossorigin></script>
 	<script src="https://unpkg.com/react-dom@17/umd/react-dom.{{environment}}.js" crossorigin></script>
@@ -23,11 +48,4 @@ permalink: /planning/
 		data-type="module"
 		data-presets="env,react"
 	></script>
-{% endblock %}
-
-{% block content %}
-	<h1>Meal Planning</h1>
-	<div id="app">
-
-	</div>
 {% endblock %}

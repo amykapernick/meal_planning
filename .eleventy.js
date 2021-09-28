@@ -38,6 +38,22 @@ module.exports = (eleventyConfig) => {
 		console.log(data)
 		return `<script>console.log(${data})</script>`
 	});
+	eleventyConfig.addFilter("print", (data) => {
+		const items = data.map(({data}) => {
+			const {title, categories, permalink, image} = data
+			return ({title, categories, permalink, image})
+		})
+
+		return JSON.stringify(items)
+	});
+	eleventyConfig.addFilter("recipesList", (data) => {
+		const items = data.map(({data}) => {
+			const {title, categories, permalink, image} = data
+			return ({title, categories, permalink, image})
+		})
+
+		return items
+	});
 
 	// Shortcodes
 	eleventyConfig.addNunjucksAsyncShortcode('image', image)
