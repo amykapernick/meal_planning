@@ -1,0 +1,115 @@
+.days {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -10px;
+	padding: 0;
+	list-style: none;
+
+	h2 {
+		margin: 0;
+		text-align: center;
+	}
+
+	button {
+		border: 1px solid var.$navy;
+		background: var.$navy;
+		color: var.$white;
+	}
+}
+
+.day {
+	flex: 1 0 250px;
+	max-width: 400px;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 10px;
+	background: rgba(var.$navy, 0.1);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.sections {
+	margin: 0 -10px;
+	padding: 0;
+	list-style: none;
+
+	h3 {
+		margin: 0 0 10px 10px;
+		font-size: 1.1em;
+	}
+}
+
+.section {
+	margin: 10px;
+	padding: 0;
+}
+
+.recipes_list {
+	margin: 0 -10px;
+	padding: 0;
+	font-size: 0.7em;
+	list-style: none;
+
+	> li {
+		margin: 10px;
+		padding: 0;
+	}
+
+	.tags {
+		li {
+			margin: 5px;
+		}
+	}
+}
+
+.modal {
+	position: fixed;
+	z-index: 100;
+	top: 50%;
+	left: 50%;
+	width: 90vw;
+	max-width: 500px;
+	height: max-content;
+	max-height: 90vh;
+	padding: 50px;
+	transform: translateX(-50%) translateY(-50%);
+
+	&:before, &:after {
+		content: '';
+	}
+
+	&:before {
+		position: absolute;
+		z-index: -5;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border-radius: 12px;
+		background: var.$white;
+		box-shadow: 0 10px 20px rgba(var.$neutral, 0.19), 0 6px 6px rgba(var.$neutral, 0.23);
+	}
+
+	&:after {
+		position: fixed;
+		z-index: -10;
+		top: 50%;
+		left: 50%;
+		width: 100vw;
+		height: 100vh;
+		transform: translateX(-50%) translateY(-50%);
+		background: var.$neutral;
+	}
+
+	select {
+		width: 100%;
+		font-size: 1.1em;
+	}
+
+	button {
+		margin-top: 20px;
+	}
+
+	h4 {
+		margin-top: 0;
+	}
+}

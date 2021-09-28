@@ -10,6 +10,14 @@ const RecipePicker = ({day, section}) => {
 	const [allRecipes, setAllRecipes] = useState([]);
 	const [modalOpen, toggleModal] = useState(false);
 	const [recipes, setRecipes] = useState([])
+	const modalData = {
+		recipes, 
+		allRecipes, 
+		toggleModal, 
+		setRecipes, 
+		day: day.toLowerCase(), 
+		section: section.toLowerCase()
+	}
 
 	useEffect(() => {
 		if(typeof window !== 'undefined') {
@@ -21,23 +29,32 @@ const RecipePicker = ({day, section}) => {
 			}
 
 			if(savedRecipes) {
-				setRecipes(JSON.parse(savedRecipes)[day]?.[section] || [])
+				const data = JSON.parse(savedRecipes)[day.toLowerCase()]?.[section.toLowerCase()] || []
+				setRecipes(data)
 			}
 		}
 	}, [])
 
 	return (
 		<React.Fragment>
-			<button onClick={() => toggleModal(true)}>Select Recipes</button>
-			{recipes.map(recipe => (
-				<RecipeCard key={recipe.permalink} {...recipe} />
-			))}
-			{modalOpen && <Modal {...{recipes, allRecipes, toggleModal, setRecipes, day, section}} />}
+			<button onClick={() => toggleModal(true)}>{recipes.length ? 'Change' : 'Select'} Recipes</button>
+			<ul className="recipes_list">
+				{recipes.map(recipe => (
+					<li key={recipe.permalink}>
+						<RecipeCard {...recipe} />
+					</li>
+				))}
+			</ul>
+			{modalOpen 
+				&& <Modal {...modalData}>
+					<h4>Select Recipes for {day} - {section}</h4>
+				</Modal>
+			}
 		</React.Fragment>
 	)
 }
 
-const Modal = ({allRecipes, toggleModal, setRecipes, recipes, day, section}) => {
+const Modal = ({allRecipes, toggleModal, setRecipes, recipes, day, section, children}) => {
 	const select = createRef()
 	const selectedRecipes = recipes.map(recipe => recipe.permalink)
 	const saveRecipes = () => {
@@ -66,12 +83,13 @@ const Modal = ({allRecipes, toggleModal, setRecipes, recipes, day, section}) => 
 
 	return (
 		<div className="modal">
-			<button onClick={saveRecipes}>Save Recipes</button>
+			{children}
+			
 			<select
 				ref={select}
 				multiple={true}
 				name="recipes"
-				size="5"
+				size="10"
 			>
 				{allRecipes.map((recipe) => (
 					<option 
@@ -83,6 +101,7 @@ const Modal = ({allRecipes, toggleModal, setRecipes, recipes, day, section}) => 
 					</option>
 				))}
 			</select>
+			<button onClick={saveRecipes}>Save Recipes</button>
 		</div>
 	)
 }
@@ -94,7 +113,7 @@ const RecipeCard = ({title, image, categories, permalink}) => (
 				{title}
 			</a>
 		</h2>
-		<img src={image || '/img/placeholder.png'} />
+		{image && <img src={image} />}
 		<ul className="tags" lang="en-AU">
 			{categories.map(cat => (
 				<li key={cat}>{cat}</li>
