@@ -133,4 +133,3 @@ document.querySelectorAll('.days .day').forEach(day => {
 		ReactDOM.render(<RecipePicker {...{day: dayName, section: sectionName}} />, picker);
 	})
 })
-
