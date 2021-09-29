@@ -2,6 +2,7 @@
 title: Easy Rum Balls
 categories:
   - Christmas
+image: /img/cms/mvimg_20171213_174045.jpg
 ingredients:
   - 250g choc ripple biscuits
   - 250g scotch finger biscuits
