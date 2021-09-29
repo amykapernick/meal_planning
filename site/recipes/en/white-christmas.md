@@ -2,6 +2,7 @@
 title: White Christmas
 categories:
   - Christmas
+image: /img/cms/mvimg_20171213_174045.jpg
 ingredients:
   - 500g white chocolate
   - 1.5 cups rice bubbles
