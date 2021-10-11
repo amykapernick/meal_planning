@@ -1,4 +1,6 @@
 ---
+categories:
+  - Dessert
 ingredients:
   - 4 eggs
   - Pinch salt
