@@ -1,10 +1,9 @@
 {
   "name": "meal_planning",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "doppler run -- parcel site/index.html"
   },
   "repository": {
     "type": "git",
@@ -16,5 +15,24 @@
   "bugs": {
     "url": "https://github.com/amykapernick/meal_planning/issues"
   },
-  "homepage": "https://github.com/amykapernick/meal_planning#readme"
+  "homepage": "https://github.com/amykapernick/meal_planning#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.4.1",
+    "buffer": "^6.0.3",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "parcel": "^2.4.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "@azure/cosmos": "^3.15.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^6.3.0"
+  }
 }
